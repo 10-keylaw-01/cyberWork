@@ -1,0 +1,217 @@
+/* ======== General Styles ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3 {
+    margin-bottom: 20px;
+    color: #00f0ff;
+  }
+  
+  p {
+    margin-bottom: 15px;
+  }
+  
+  /* ======== Navigation ======== */
+  nav {
+    background: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px; /* Starting height */
+    padding: 0 50px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    transition: all 0.3s ease;
+  }
+  
+  nav.shrink {
+    background: rgba(0, 0, 0, 0.8); /* Slight transparency */
+    backdrop-filter: blur(5px);
+    height: 40px; /* Smaller height (around 1cm) */
+    padding: 0 30px; /* reduce padding too */
+  }
+  
+  nav .logo img {
+    height: 80px;
+    width: auto;
+    transition: all 0.3s ease;
+  }
+  
+  nav.shrink .logo img {
+    height: 30px; /* smaller logo */
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #00f0ff;
+  }
+  
+  /* ======== Header Section ======== */
+  header {
+    height: 100vh;
+    background: url('../images/banner.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .header-content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+  
+  .header-content p {
+    font-size: 20px;
+    color: #aaa;
+  }
+  .header-content {
+    margin-top: -80px; /* pushes the header upwards */
+  }
+  
+  .cyber-images-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    width: 100%;
+    justify-content: center;
+    padding: 0 20px;
+  }
+  
+  .cyber-image-card {
+    background: #121212;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 180px; /* Perfect square look */
+  }
+  
+  .cyber-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .cyber-image-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px #00f0ff;
+  }
+  
+  
+  /* ======== Sections ======== */
+  section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .services-container, .shop-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .service-card, .product-card {
+    background: #121212;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover, .product-card:hover {
+    transform: translateY(-10px);
+    background: #1f1f1f;
+    box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff, 0 0 60px #00f0ff;
+}
+
+  
+  .map-container iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+  }
+  
+  /* ======== Contact Section ======== */
+  .social-links {
+    margin-top: 20px;
+  }
+  
+  .social-links a {
+    color: #00f0ff;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
+  }
+  
+  .social-links a:hover {
+    color: #ffffff;
+  }
+  
+  /* ======== Footer ======== */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #000000;
+    color: #777;
+    font-size: 14px;
+  }
+  
+  /* ======== Animations ======== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+      display: none;
+    }
+  
+    nav.active .nav-links {
+      display: flex;
+    }
+  } 
+  .coming-soon {
+    padding-top: 15px;
+    transform: translateY(0)
+    
+  }
