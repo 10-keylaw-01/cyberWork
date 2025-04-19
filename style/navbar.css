@@ -1,0 +1,161 @@
+nav {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px; /* Increased height to accommodate logo better */
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+  }
+  
+  /* This class will be added/removed via JavaScript when scrolling */
+  nav.scrolled {
+    height: 60px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  nav .logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  nav .logo img {
+    height: 50px; /* Fixed height that works well in both scrolled and normal states */
+    width: auto;
+    transition: all 0.3s ease;
+    filter: brightness(1.2) contrast(1.1); /* Subtle enhancement */
+  }
+  
+  nav.scrolled .logo img {
+    height: 40px; /* Slightly smaller when scrolled */
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+    position: relative; /* For the hover effect */
+  }
+  
+  .nav-links a {
+    padding: 10px 5px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+    opacity: 0.8;
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  
+  .nav-btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    padding: 8px 20px !important;
+    border-radius: 30px;
+    color: #000 !important;
+    box-shadow: var(--glow-shadow);
+    margin-left: 10px;
+  }
+  
+  .nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.7);
+  }
+  
+  .nav-btn::after {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--text-light);
+    transition: var(--transition-fast);
+    background: none;
+    border: none;
+    z-index: 1000;
+  }
+  
+  .menu-toggle:hover {
+    color: var(--primary-color);
+  }
+  
+  .hamburger-icon {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 22px;
+  }
+  
+  .hamburger-icon span {
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--text-light);
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: var(--transition-fast);
+  }
+  
+  .hamburger-icon span:nth-child(1) {
+    top: 0;
+  }
+  
+  .hamburger-icon span:nth-child(2) {
+    top: 9px;
+  }
+  
+  .hamburger-icon span:nth-child(3) {
+    top: 18px;
+  }
+  
+  .menu-open .hamburger-icon span:nth-child(1) {
+    top: 9px;
+    transform: rotate(135deg);
+  }
+  
+  .menu-open .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+  }
+  
+  .menu-open .hamburger-icon span:nth-child(3) {
+    top: 9px;
+    transform: rotate(-135deg);
+  }
+  

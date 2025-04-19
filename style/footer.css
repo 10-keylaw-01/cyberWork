@@ -1,0 +1,99 @@
+footer {
+    background: var(--bg-darker);
+    padding: 60px 20px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.05) 0%, transparent 70%);
+    z-index: 0;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .footer-logo img {
+    height: 50px; /* Matched with navbar logo for consistency */
+    margin-bottom: 20px;
+    filter: brightness(1.2) contrast(1.1); /* Match navbar logo styling */
+  }
+  
+  .footer-logo p {
+    color: var(--text-dark);
+    max-width: 400px;
+  }
+  
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  
+  .footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--text-light);
+  }
+  
+  .footer-column ul {
+    list-style: none;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-column ul li a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: var(--transition-fast);
+    position: relative;
+    padding: 2px 0;
+  }
+  
+  .footer-column ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+  }
+  
+  .footer-column ul li a:hover {
+    color: var(--primary-color);
+  }
+  
+  .footer-column ul li a:hover::after {
+    width: 100%;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .footer-bottom p {
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    margin: 0;
+  }
